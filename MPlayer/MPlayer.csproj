@@ -95,6 +95,7 @@
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="Converters\InverseBoolVisConverter.cs" />
     <Compile Include="D2D\Helper.cs" />
+    <Compile Include="Models\AlbumModel.cs" />
     <Compile Include="Models\SongModel.cs" />
     <Compile Include="D2D\Disposer.cs" />
     <Compile Include="D2D\DX10ImageSource.cs" />

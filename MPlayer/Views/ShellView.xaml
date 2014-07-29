@@ -1,0 +1,47 @@
+﻿<Window x:Class="MPlayer.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=Microsoft.Windows.Shell"
+        
+        mc:Ignorable="d" 
+        d:DesignHeight="768" d:DesignWidth="1366"
+        SizeChanged="Window_SizeChanged"
+        Style="{StaticResource MetroNoBorderStyle}">
+
+    <Grid Name="MainGrid" ClipToBounds="False" shell:WindowChrome.IsHitTestVisibleInChrome="True">
+
+        <ContentControl x:Name="MainScreen" />
+
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="MPlayer" Foreground="#CCCCCC" FontFamily="Calibri"
+               FontSize="14" Margin="45,6,0,0" FontWeight="Light"/>
+
+        <!--Titlebar controls-->
+        <Rectangle Height="40" Fill="Transparent" VerticalAlignment="Top" PreviewMouseLeftButtonDown="Drag" shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+        <Button HorizontalAlignment="Right" Margin="500,0,0,0" VerticalAlignment="Top" shell:WindowChrome.IsHitTestVisibleInChrome="True"
+                Style="{StaticResource ChromeButtonStyle}" Width="34" Height="26" Click="Close">
+            <TextBlock TextWrapping="Wrap" Text="&#x72;" FontFamily="Marlett" FontSize="14" />
+        </Button>
+        <Button HorizontalAlignment="Right" Margin="500,0,34,0" VerticalAlignment="Top" shell:WindowChrome.IsHitTestVisibleInChrome="True"
+                Style="{StaticResource ChromeButtonStyle}" Width="34" Height="26" Click="Maximize">
+            <TextBlock TextWrapping="Wrap" Text="&#x31;" FontFamily="Marlett" FontSize="14" />
+        </Button>
+        <Button HorizontalAlignment="Right" Margin="500,0,68,0" VerticalAlignment="Top" shell:WindowChrome.IsHitTestVisibleInChrome="True"
+                Style="{StaticResource ChromeButtonStyle}" Width="34" Height="26" Click="Minimize">
+            <TextBlock TextWrapping="Wrap" Text="&#x30;" FontFamily="Marlett" FontSize="14" />
+        </Button>
+
+        <!--Resizing controls-->
+        <TextBlock TextWrapping="Wrap" Text="&#x6F;" FontFamily="Marlett" FontSize="14" shell:WindowChrome.IsHitTestVisibleInChrome="True"
+                   Width="18" Height="18" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                   Foreground="#959595" PreviewMouseLeftButtonDown="ResizeBottomRight" Cursor="SizeNWSE" Name="ResizerBr" />
+        <Rectangle Fill="Transparent" HorizontalAlignment="Right" Width="8" VerticalAlignment="Stretch" Margin="0,40,0,40" 
+                   PreviewMouseLeftButtonDown="ResizeRight" Cursor="SizeWE" Name="ResizerR" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+        <Rectangle Fill="Transparent" HorizontalAlignment="Stretch" Height="8" VerticalAlignment="Bottom" Margin="0,0,40,0" 
+                   PreviewMouseLeftButtonDown="ResizeBottom" Cursor="SizeNS" Name="ResizerB" shell:WindowChrome.IsHitTestVisibleInChrome="True" />
+
+        <Border BorderThickness="1" BorderBrush="#007ACC" />
+
+    </Grid>
+</Window>

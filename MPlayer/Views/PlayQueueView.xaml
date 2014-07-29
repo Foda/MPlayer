@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="MPlayer.Views.PlayQueueView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cal="http://www.caliburnproject.org"
+             mc:Ignorable="d" 
+             Height="300" Width="256">
+    <Grid Background="#C8000000">
+        <ListView ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="0,0,0,0" Style="{DynamicResource MetroListView}"
+                  ItemsSource="{Binding QueueSongs}" ItemContainerStyle="{DynamicResource MetroListViewItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalAlignment="Stretch" cal:Bind.Model="{Binding}">
+                        <TextBlock Name="Title" Margin="4,8,0,0" FontSize="16" Foreground="White" HorizontalAlignment="Stretch"
+                                   FontFamily="Segoe UI" FontWeight="SemiBold"/>
+                        <TextBlock Name="Album" Margin="4,28,0,8" FontSize="10" Foreground="#969696" FontWeight="SemiBold"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>

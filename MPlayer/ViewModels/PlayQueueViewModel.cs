@@ -28,7 +28,7 @@ namespace MPlayer.ViewModels
         {
             QueueSongs = new BindableCollection<SongModel>();
             
-            QueueSongs.Add(new SongModel()
+            /*QueueSongs.Add(new SongModel()
             {
                 Album = "TestAlbum",
                 Title = "TestTitle"
@@ -44,7 +44,7 @@ namespace MPlayer.ViewModels
             {
                 Album = "TestAlbum3",
                 Title = "TestTitle3"
-            });
+            });*/
         }
     }
 }

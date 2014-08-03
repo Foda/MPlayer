@@ -12,6 +12,11 @@ namespace MPlayer
 		public AppBootstrapper()
 		{
 			Start();
+
+            int thread, thread2;
+            System.Threading.ThreadPool.GetMaxThreads(out thread, out thread2);
+
+            Console.WriteLine(thread + "|" + thread2);
 		}
 
 		protected override void Configure()

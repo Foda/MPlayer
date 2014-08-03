@@ -102,6 +102,7 @@
     <Compile Include="Interfaces\IMainScreen.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="Models\UserSettingsModel.cs" />
+    <Compile Include="Services\TransportControlService.cs" />
     <Compile Include="ViewModels\LibraryViewModel.cs" />
     <Compile Include="ViewModels\NowPlayingViewModel.cs" />
     <Compile Include="ViewModels\OptionsViewModel.cs" />

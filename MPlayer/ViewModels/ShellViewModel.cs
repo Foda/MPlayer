@@ -5,9 +5,19 @@ namespace MPlayer.ViewModels
 {
     public class ShellViewModel : Conductor<IMainScreen>.Collection.OneActive, IShell 
     {
-        public LibraryViewModel LibraryViewModel { get; set; }
-        public NowPlayingViewModel NowPlayingViewModel { get; set; }
-        public OptionsViewModel OptionsViewModel { get; set; }
+        private BindableCollection<IMainScreen> _items;
+        public BindableCollection<IMainScreen> Items
+        {
+            get
+            {
+                return _items;
+            }
+            set
+            {
+                _items = value;
+                NotifyOfPropertyChange(() => Items);
+            }
+        }
 
         IMainScreen _screen;
         public IMainScreen MainScreen
@@ -22,11 +32,12 @@ namespace MPlayer.ViewModels
 
         public ShellViewModel()
         {
-            LibraryViewModel = new LibraryViewModel();
-            NowPlayingViewModel = new NowPlayingViewModel();
-            OptionsViewModel = new OptionsViewModel();
+            Items = new BindableCollection<IMainScreen>();
+            Items.Add(new LibraryViewModel());
+            Items.Add(new NowPlayingViewModel());
+            Items.Add(new OptionsViewModel());
 
-            MainScreen = NowPlayingViewModel;
+            MainScreen = Items[0];
         }
     }
 }

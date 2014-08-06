@@ -15,5 +15,13 @@ namespace MPlayer.ViewModels
         {
             get { return MainScreens.Library; }
         }
+
+        public string DisplayName
+        {
+            get
+            {
+                return "LIBRARY";
+            }
+        }
     }
 }

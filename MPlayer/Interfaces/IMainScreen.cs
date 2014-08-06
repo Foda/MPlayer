@@ -9,6 +9,8 @@ namespace MPlayer.Interfaces
     public interface IMainScreen
     {
         MainScreens Order { get; }
+
+        string DisplayName { get; }
     }
 
     public enum MainScreens

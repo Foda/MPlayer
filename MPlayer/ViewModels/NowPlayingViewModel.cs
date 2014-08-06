@@ -17,6 +17,14 @@ namespace MPlayer.ViewModels
             get { return MainScreens.NowPlaying; }
         }
 
+        public string DisplayName
+        {
+            get
+            {
+                return "NOW PLAYING";
+            }
+        }
+
         public PlaybackControlsViewModel PlaybackControlsViewModel { get; set; }
         public PlayQueueViewModel PlayQueueViewModel { get; set; }
 
